@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="/css/_navbar.css" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.google.com/specimen/Staatliches?query=Staatliches"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.google.com/specimen/Poppins?query=Poppins"
+/>
+
+<!-- Navbar -->
+<header class="header-part-1">
+  <nav class="navbar">
+    <!-- Icon of Curvz and Link to Homepage -->
+    <div class="navbar-part-1">
+      <a class="navbar-icon" href="/">
+        <img class="navbar-icon-image" src="\images\cc.png" alt="icon" />
+      </a>
+    </div>
+
+    <div class="navbar-part-2">
+      <a class="navbar-links" href="/shop/mens"> MEN </a>
+      <a class="navbar-links" href="/shop/womens"> WOMEN </a>
+      <a class="navbar-links" href="/shop/kids"> KIDS </a>
+      <a class="navbar-links" href="#"> FANCY </a>
+      <a class="navbar-links" href="#"> COLLECTION </a>
+    </div>
+
+    <div class="navbar-part-3">
+      <div id="search-bar-div">
+        <div class="search-field">
+          <button onclick="closesearch()" class = "search-btth">
+            <img
+              src="/images/search.png"
+              id="search-icon"
+              class="search-icon"
+              alt=""
+            />
+          </button>
+          <input type="text" class="search-bar-input" />
+        </div>
+        <div id="search-results">
+          <ul class="result-list">
+            <li class="result-item">
+              <div class="result-name">Product Description</div>
+              <img src="../../assets/images/GOOG.svg" alt="" class="link-vector">
+            </li>
+            <li class="result-item">
+              <div class="result-name">Product Description</div>
+              <img src="../../assets/images/GOOG.svg" alt="" class="link-vector">
+            </li>
+            <li class="result-item">
+              <div class="result-name">Product Description</div>
+              <img src="../../assets/images/GOOG.svg" alt="" class="link-vector">
+            </li>
+            <li class="result-item">
+              <div class="result-name">Product Description</div>
+              <img src="../../assets/images/GOOG.svg" alt="" class="link-vector">
+              <!-- change to svg -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="elementContainer" id="search-div">
+        <button onclick="clicksearch()">
+          <img
+            src="/images/search.png"
+            id="search-icon"
+            class="search-icon"
+            alt=""
+          />
+        </button>
+        <!-- <input type="text" class="s"> -->
+      </div>
+      <div>
+        <img src="/images/shopping.png" class="navbar-3" alt="" />
+      </div>
+
+      <!-- EJS Loop for sign in and sign up -->
+      <% if(!(title==="Sign up" || title==="Sign in" ) ) {%>
+        <% var log=locals.user %>
+        <% if(locals.user){ %>
+            <div id="toggle">
+                <a href=""><img src="/images/user.png" class="navbar-3" alt="" /></a>
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="/users/sign-out">Sign Out</a></li>
+                </ul>
+              </div>
+        <% } else {%>
+            <a class="navbar-login" href="/users/sign-in" target="_self"> LOGIN </a>
+        <%}%>
+      <%}%>
+      <!-- EJS Loop Ends -->
+    </div>
+  </nav>
+</header>
+<script src="/js/login.js"></script>
